@@ -1,10 +1,10 @@
-name:                cassandrarepo
+name:                cassandraaccess
 version:             0.1.0.0
-github:              "githubuser/cassandrarepo"
+github:              "micwypych/haksell-cassandra-access"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2018 Author name here"
+author:              "Michał Wypych"
+maintainer:          "mwypych@agh.edu.pl"
+copyright:           "2018 Michał Wypych"
 
 extra-source-files:
 - README.md
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/cassandrarepo#readme>
+description:         Please see the README on GitHub at <https://github.com/micwypych/haksell-cassandra-access#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -27,25 +27,27 @@ dependencies:
 - tinylog
 - uuid
 - either
+- random
+
+default-extensions:
+- OverloadedStrings
 
 library:
   source-dirs: src
 
 executables:
-  cassandrarepo-exe:
+  cassandraaccess-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    extensions:
-    - OverloadedStrings
     dependencies:
-    - cassandrarepo
+    - cassandraaccess
 
 tests:
-  cassandrarepo-test:
+  cassandraaccess-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -53,4 +55,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - cassandrarepo
+    - cassandraaccess
